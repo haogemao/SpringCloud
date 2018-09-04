@@ -1,0 +1,30 @@
+package com.person.springcloud;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@SuppressWarnings({"rawtypes","unchecked"})
+@RestController
+public class DcController {
+
+	@Autowired
+	private DcClient dcClient;
+	
+	
+	@GetMapping("/hello")
+	public Map hello() {
+		Map result = new HashMap();
+		result.put("errCode", "S");
+		result.put("errMsg", null);
+		return result;
+	}
+	
+	@GetMapping("/consumer")
+	public String dc() {
+		return dcClient.consumer();
+	}
+}

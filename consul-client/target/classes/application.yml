@@ -1,0 +1,12 @@
+server:
+  port: 1003
+  
+spring:
+  application:
+    name: consul-client
+    
+  cloud:
+    consul:
+      host: localhost
+      port: 8500 
+   

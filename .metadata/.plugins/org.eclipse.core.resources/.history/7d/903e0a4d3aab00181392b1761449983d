@@ -1,0 +1,6 @@
+server:
+  port: 1006
+  
+spring:
+  application:
+    name: eureka-consumer-feign

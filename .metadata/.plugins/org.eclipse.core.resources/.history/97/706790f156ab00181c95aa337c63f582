@@ -1,0 +1,44 @@
+package com.person.springcloud;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
+
+import lombok.extern.slf4j.Slf4j;
+
+@SuppressWarnings({"rawtypes","unchecked"})
+@Slf4j
+@RestController
+public class DcController {
+
+	@Autowired
+	private DcClient dcClient;
+	
+
+	@PostMapping(value="/uploadfile", consumes=MediaType.MULTIPART_FORM_DATA_VALUE)
+	public String handleFileUpload(@RequestParam("file") MultipartFile file) {
+		log.info(file.getName() + "---->" + file.getSize());
+	}
+	
+	
+	@GetMapping("/hello")
+	public Map hello() {
+		Map result = new HashMap();
+		result.put("errCode", "S");
+		result.put("errMsg", null);
+		return result;
+	}
+	
+	@GetMapping("/consumer")
+	public String dc() {
+		log.info(dcClient.consumer());
+		return dcClient.consumer();
+	}
+}

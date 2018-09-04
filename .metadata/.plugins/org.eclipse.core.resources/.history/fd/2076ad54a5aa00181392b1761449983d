@@ -1,0 +1,5 @@
+package com.person.springcloud.controller;
+
+public class DcController {
+
+}

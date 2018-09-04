@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aop-reference-model>
+<aop-project name="eureka-client"/>
+<aop-project name="eureka-consumer-ribbon"/>
+<aop-project name="eureka-consumer-feign"/>
+<aop-project name="eureka-server"/>
+<aop-project name="eureka-consumer"/>
+<aop-project name="consul-client"/>
+</aop-reference-model>
